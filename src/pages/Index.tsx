@@ -119,11 +119,11 @@ export default function Index() {
             />
           )}
           {/* Blue transparent gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/40 to-transparent mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/60 via-primary/30 to-transparent mix-blend-multiply" />
         </div>
         
         {/* Quote Text */}
-        <div className="relative z-10 flex items-center justify-end w-full h-full px-8 md:px-16">
+        <div className="hidden">
           <div className="text-right max-w-lg">
             <h2
               className="text-2xl md:text-4xl lg:text-5xl font-serif italic text-white leading-tight tracking-wide"
@@ -172,59 +172,57 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Founder & Blessings Section */}
+      {/* Founder & Blessings Section - styled like reference site */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Founder Card */}
-            <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img 
+          <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto items-start">
+            {/* Founder */}
+            <div className="text-center">
+              <div className="w-full aspect-[4/3] overflow-hidden rounded-lg shadow-lg mb-4 bg-background">
+                <img
                   src={home.founderSection?.founder?.imageUrl || "https://github.com/Satyamurthi/mbw-Photos/blob/main/Baba%20Photos/Sunandamma.png?raw=true"}
-                  alt="Founder"
+                  alt={home.founderSection?.founder?.name || "Founder"}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <CardContent className="p-6 text-center">
-                <p className="text-primary text-xs uppercase tracking-widest mb-2 font-medium">
-                  founder president
-                </p>
-                <h3 className="text-xl font-bold text-primary mb-3 hover:underline cursor-pointer">
-                  {home.founderSection?.founder?.name || "Late Smt Sunandamma"}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {home.founderSection?.founder?.description || "Deeply influenced by the Bhagvn Sri Satya Sai Baba, Smt Sunandamma, with the help of some dedicated workers, set up this educational institution at Mysuru on 1957…..."}
-                </p>
-                <button className="text-primary text-sm mt-3 hover:underline font-medium">
-                  Read more
-                </button>
-              </CardContent>
-            </Card>
+              <p className="text-primary text-xs uppercase tracking-[0.2em] mb-1 font-semibold">
+                founder president
+              </p>
+              <h3 className="text-lg md:text-xl font-semibold text-primary mb-2">
+                {home.founderSection?.founder?.name || "Late Smt Sunandamma"}
+              </h3>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-md mx-auto">
+                {home.founderSection?.founder?.description ||
+                  "Deeply influenced by the Bhagvn Sri Satya Sai Baba, Smt Sunandamma, with the help of some dedicated workers, set up this educational institution at Mysuru on 1957…..."}
+              </p>
+              <button className="mt-3 text-sm font-medium text-primary hover:underline">
+                Read more
+              </button>
+            </div>
 
-            {/* Blessings Card */}
-            <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img 
+            {/* Blessings */}
+            <div className="text-center">
+              <div className="w-full aspect-[4/3] overflow-hidden rounded-lg shadow-lg mb-4 bg-background">
+                <img
                   src={home.founderSection?.blessings?.imageUrl || "https://github.com/Satyamurthi/mbw-Photos/blob/main/Baba%20Photos/Baba%20Cahir.jpg?raw=true"}
-                  alt="Blessings"
+                  alt={home.founderSection?.blessings?.name || "Blessings"}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <CardContent className="p-6 text-center">
-                <p className="text-primary text-xs uppercase tracking-widest mb-2 font-medium">
-                  blessings
-                </p>
-                <h3 className="text-xl font-bold text-primary mb-3 hover:underline cursor-pointer">
-                  {home.founderSection?.blessings?.name || "Bhagawan Sri Sathya Sai Baba"}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {home.founderSection?.blessings?.description || "Bhagawan Sri Sathya Sai Baba was incarnated in a remote village called Puttaparthi in Anantpur district in Andhra Pradesh in the year 23-11-1926. His parents…..."}
-                </p>
-                <button className="text-primary text-sm mt-3 hover:underline font-medium">
-                  Read more
-                </button>
-              </CardContent>
-            </Card>
+              <p className="text-primary text-xs uppercase tracking-[0.2em] mb-1 font-semibold">
+                blessings
+              </p>
+              <h3 className="text-lg md:text-xl font-semibold text-primary mb-2">
+                {home.founderSection?.blessings?.name || "Bhagawan Sri Sathya Sai Baba"}
+              </h3>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-md mx-auto">
+                {home.founderSection?.blessings?.description ||
+                  "Bhagawan Sri Sathya Sai Baba was incarnated in a remote village called Puttaparthi in Anantpur district in Andhra Pradesh in the year 23-11-1926. His parents…..."}
+              </p>
+              <button className="mt-3 text-sm font-medium text-primary hover:underline">
+                Read more
+              </button>
+            </div>
           </div>
         </div>
       </section>

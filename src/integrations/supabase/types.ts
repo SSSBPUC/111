@@ -236,6 +236,42 @@ export type Database = {
         }
         Relationships: []
       }
+      attendance_summaries: {
+        Row: {
+          class: string
+          created_at: string
+          date: string
+          id: string
+          present_count: number
+          section: string
+          teacher_name: string
+          total_count: number
+          updated_at: string
+        }
+        Insert: {
+          class: string
+          created_at?: string
+          date: string
+          id?: string
+          present_count: number
+          section: string
+          teacher_name: string
+          total_count: number
+          updated_at?: string
+        }
+        Update: {
+          class?: string
+          created_at?: string
+          date?: string
+          id?: string
+          present_count?: number
+          section?: string
+          teacher_name?: string
+          total_count?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       campus_activities: {
         Row: {
           category: string | null
@@ -298,6 +334,45 @@ export type Database = {
           hero_description?: string | null
           hero_title?: string | null
           id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      exam_schedule: {
+        Row: {
+          class: string
+          created_at: string
+          exam_date: string
+          exam_name: string
+          exam_time: string
+          id: string
+          room: string | null
+          section: string
+          teacher_name: string
+          updated_at: string
+        }
+        Insert: {
+          class: string
+          created_at?: string
+          exam_date: string
+          exam_name: string
+          exam_time: string
+          id?: string
+          room?: string | null
+          section: string
+          teacher_name: string
+          updated_at?: string
+        }
+        Update: {
+          class?: string
+          created_at?: string
+          exam_date?: string
+          exam_name?: string
+          exam_time?: string
+          id?: string
+          room?: string | null
+          section?: string
+          teacher_name?: string
           updated_at?: string
         }
         Relationships: []
@@ -575,6 +650,39 @@ export type Database = {
         }
         Relationships: []
       }
+      rating_summaries: {
+        Row: {
+          average_rating: number
+          class: string
+          created_at: string
+          feedback_count: number
+          id: string
+          section: string
+          teacher_name: string
+          updated_at: string
+        }
+        Insert: {
+          average_rating: number
+          class: string
+          created_at?: string
+          feedback_count: number
+          id?: string
+          section: string
+          teacher_name: string
+          updated_at?: string
+        }
+        Update: {
+          average_rating?: number
+          class?: string
+          created_at?: string
+          feedback_count?: number
+          id?: string
+          section?: string
+          teacher_name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       site_content: {
         Row: {
           created_at: string
@@ -668,6 +776,48 @@ export type Database = {
           qualifications?: string | null
           updated_at?: string
           user_id?: string | null
+        }
+        Relationships: []
+      }
+      timetable_entries: {
+        Row: {
+          class: string
+          created_at: string
+          day_of_week: string
+          end_time: string
+          id: string
+          room: string | null
+          section: string
+          start_time: string
+          subject: string
+          teacher_name: string
+          updated_at: string
+        }
+        Insert: {
+          class: string
+          created_at?: string
+          day_of_week: string
+          end_time: string
+          id?: string
+          room?: string | null
+          section: string
+          start_time: string
+          subject: string
+          teacher_name: string
+          updated_at?: string
+        }
+        Update: {
+          class?: string
+          created_at?: string
+          day_of_week?: string
+          end_time?: string
+          id?: string
+          room?: string | null
+          section?: string
+          start_time?: string
+          subject?: string
+          teacher_name?: string
+          updated_at?: string
         }
         Relationships: []
       }
