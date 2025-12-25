@@ -47,7 +47,7 @@ serve(async (req) => {
       });
     }
 
-    const passwordHash = await hashPassword(password);
+    // NOTE: For simplicity, compare plain text password to stored value in portal_users
 
     const { data: user, error } = await supabase
       .from("portal_users")
@@ -78,7 +78,7 @@ serve(async (req) => {
       });
     }
 
-    if (!user.password_hash || user.password_hash !== passwordHash) {
+    if (!user.password_hash || user.password_hash !== password) {
       return new Response(JSON.stringify({ success: false, message: "Invalid username or password" }), {
         status: 401,
         headers: { "Content-Type": "application/json", ...corsHeaders },
